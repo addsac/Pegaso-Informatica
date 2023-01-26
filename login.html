@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Siamo un negozio di Informatica a FOntaniva, Padova specializzato in offrire servizi alle aziende e privati quali Vendita e assistenza computer e hardware, gestione server e sicurezza reti, consumabili stampanti, siti web e software gestionali.">
+    <meta name="keywords" content="pegaso, pegaso informatica, pegaso fontaniva, pegaso cittadella, negozio informatica, computer fontaniva, computer padova, siti web cittadella, siti web fontaniva">
+    <title> Pegaso Informatica | Hardware, Reti, Server e Software</title>
+    
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-apple-touch-icon.png" />
+    <link rel="canonical" href="https://pegasoinformatica.com" />
+    
+    <!-- Tailwindcss cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': {
+                            'dark': '#00324F',
+                            'normal': '#048FE2',
+                            'light': '#8EC4F3',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Swiper slider cdn -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+        
+        @layer base {
+            html, body {
+                font-family: 'Open Sans', Arial, Helvetica, sans-serif, sans-serif;
+                overflow-x: hidden;
+            }
+        }
+
+        a:not(.no-link-transition){
+            @apply transition hover:opacity-60;
+        }
+
+        p{
+            @apply tracking-[-1%];
+        }
+
+        .bg-margin{
+            @apply bg-transparent; /* da cambiare a bg-red-100 o transparent */
+        }
+
+        .contact-style-button{
+            @apply border border-gray-300 rounded-lg h-[54px] bg-white;
+        }
+
+        .form-button-active{
+            @apply !bg-gray-800 !text-white border-gray-800;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Layout -->
+    <div class="mx-auto w-full max-w-[1348px] px-0 lg:px-6">
+
+        <header class="w-full bg-white">
+            <!-- sub header -->
+            <div class="hidden h-[72px] md:flex items-center justify-between">
+                <div class="flex items-center gap-x-10">
+                    <a href="mailto:info@pegasoinformatica.com" class="flex items-center gap-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-400">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                        </svg>
+                        <span class="text-sm lg:text-base text-gray-800"> info@pegasoinformatica.com </span>
+                    </a>
+                    <a href="https://goo.gl/maps/BvfwTzVvU9tQ8hXY8" class="flex items-center gap-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-400">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                        <span class="text-sm lg:text-base text-gray-800"> via Dante 56, Fontaniva, (PD) </span>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-x-6">
+                    <!-- <button class="flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition h-8 px-2 gap-x-[10px] rounded">
+                        🇮🇹
+                        <span class="text-[12px] font-semibold"> It </span>
+                    </button>
+                    <button class="flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition h-8 px-2 gap-x-[10px] rounded">
+                        🏴󠁧󠁢󠁥󠁮󠁧󠁿
+                        <span class="text-[12px] font-semibold"> En </span>
+                    </button> -->
+                    <button onClick="toggleModalSupport()" class="text-sm lg:text-base text-gray-800 hover:opacity-60"> 
+                        Supporto tecnico
+                    </button>
+                    <a href="/login.aspx" class="text-sm lg:text-base text-gray-800"> 
+                        Login
+                    </a>
+                </div>
+            </div>
+
+            <!-- main header -->
+            <div class="w-full flex items-center justify-between py-3 lg:py-6 border-b border-gray-200 px-6 lg:px-0">
+                <!-- logo -->
+                <button onClick="location.href = '/'" class="cursor-pointer flex items-center gap-x-6">
+                    <img src="img/logo.png" alt="" class="w-auto h-8 lg:h-16" />
+                    <p class="text-base lg:text-xl font-semibold text-gray-900"> Pegaso Informatica</p>
+                </button>
+                
+                <!-- links -->
+                <div class="hidden lg:flex">
+                    <a href="/" class="relative flex items-center justify-center px-5 py-2 text-sm lg:text-base text-gray-900 hover:bg-gray-200 rounded-[6px] transition">
+                        Servizi
+                    </a>
+                    <a href="/" class="relative flex items-center justify-center px-5 py-2 text-sm lg:text-base text-gray-900 hover:bg-gray-200 rounded-[6px] transition">
+                        Chi siamo
+                    </a>
+                    <a href="/" class="relative flex items-center justify-center px-5 py-2 text-sm lg:text-base text-gray-900 hover:bg-gray-200 rounded-[6px] transition">
+                        Dicono di noi
+                    </a>
+                </div>
+
+                <!-- call us cta -->
+                <div class="hidden lg:flex justify-end w-[273px]">
+                    <button onClick="callSupport()" class="flex items-center justify-center gap-x-4 bg-blue-50 hover:bg-blue-100 transition px-6 py-3 rounded-[6px]">
+                        <img src="img/icon-call.svg" alt="" class="h-8 w-auto" />
+                        <div class="flex flex-col text-left gap-y-1">
+                            <p class="witespace-nowrap font-semibold text-sm text-gray-900 opacity-50"> Contatta il supporto </p>
+                            <p class="witespace-nowrap font-semibold text-gray-900"> 049 594 1819 </p>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- mobile opem_menu button -->
+                <button onclick="toggleMenuMobile()" class="flex items-center justify-center lg:hidden h-full w-10">
+                    <img src="img/icon-menu.svg" alt="" class="w-[18px] h-auto" />
+                </button>
+            </div>
+        </header>
+
+        <!-- Modal menu mobile -->
+        <div id="menu-mobile__container" class="z-50 lg:hidden fixed inset-0 h-screen w-screen overflow-auto bg-black flex flex-col gap-y-14 px-6 transition duration-500 translate-x-[-120vw]">
+            <div class="flex justify-end">
+                <!-- button close menu -->
+                <button onclick="toggleMenuMobile()" class="bgwhite w-14 h-14 bg-white text-gray-900 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>                       
+                </button>
+            </div>
+
+            <div class="flex flex-col gap-y-8">
+                <div>
+                    <a href="/" class="text-3xl font-semibold text-white"> Servizi </a>
+                </div>
+                <div>
+                    <a href="/" class="text-3xl font-semibold text-white"> Chi siamo </a>
+                </div>
+                <div>
+                    <a href="/" class="text-3xl font-semibold text-white"> Dicono di noi </a>
+                </div>
+                <div>
+                    <a href="/" class="text-3xl font-semibold text-white"> Login </a>
+                </div>
+            </div>
+
+            <div class="w-full h-[1px] border border-gray-600"></div>
+
+            <div class="flex flex-col gap-y-6">
+                <div class="flex flex-col gap-y-2">
+                    <p class="text-gray-400"> Hardware </p>
+                    <a href="" class="text-xl text-gray-50"> +39 3478756140 </a>
+                </div>
+                <div class="flex flex-col gap-y-2">
+                    <p class="text-gray-400"> Reti e sicurezza </p>
+                    <a href="" class="text-xl text-gray-50"> +39 3478756140 </a>
+                </div>
+                <div class="flex flex-col gap-y-2">
+                    <p class="text-gray-400"> Software </p>
+                    <a href="" class="text-xl text-gray-50"> +39 3478756140 </a>
+                </div>
+            </div>
+
+            <div class="w-full h-[1px] border border-gray-600"></div>
+
+            <div class="flex flex-col gap-y-2">
+                <div>
+                    <button onClick="toggleModalSupport()" class="text-gray-50"> Supporto tecnico </button>
+                </div>
+                <div>
+                    <a href="/login.aspx" class="text-gray-50"> Login </a>
+                </div>
+            </div>
+
+            <div class="w-full h-[1px] border border-gray-600"></div>
+
+            <div class="flex flex-col gap-y-2">
+                <div class="flex items-center gap-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg> 
+                    <a href="" class="text-gray-50"> info@pegaso-informatica.it </a>
+                </div>
+                <div class="flex items-center gap-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                    <a href="" class="text-gray-50"> via Dante 56, Fontaniva (PD) </a>
+                </div>
+            </div>
+
+            <div class="w-full h-[1px] border border-gray-600"></div>
+
+            <div>
+                <button class="flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition h-8 px-2 gap-x-[10px] rounded">
+                    🏴󠁧󠁢󠁥󠁮󠁧󠁿
+                    <span class="text-[12px] font-semibold"> En </span>
+                </button>
+            </div>
+
+            <div class="w-full h-[1px]"></div>
+            <div class="w-full h-[1px]"></div>
+        </div>
+
+        <!-- Hero -->
+        <div class="relative z-10">
+            <div class="bg-margin w-full h-[96px] lg:h-[164px]"></div> <!-- margin -->
+            <div class="flex justify-center items-center px-6 lg:px-0">
+                <div class="border w-[500px] h-auto bg-gray-100 flex flex-col gap-y-12 lg:gap-y-14 w-full p-6 lg:p-10 rounded-xl">
+                    <div class="flex flex-col gap-y-6">
+                        <div class="flex flex-col gap-y-6">
+                            <p class="text-gray-800 text-lg lg:text-[22px]"> Nome utente </p>
+                            <input type="text" name="name" class="contact-style-button indent-4 focus:outline-none focus:border-gray-400" />
+                        </div>
+
+                        <div class="flex flex-col gap-y-6">
+                            <p class="text-gray-800 text-lg lg:text-[22px]"> Password </p>
+                            <input type="password" name="password" class="contact-style-button indent-4 focus:outline-none focus:border-gray-400" />
+                        </div>
+                    </div>
+                    
+                    <button  class="rounded-lg bg-primary-normal hover:opacity-80 transition h-[64px] py-4 px-2 text-white font-semibold flex items-center justify-center">
+                        <div class="flex gap-x-3 items-center justify-center">
+                            Accedi
+                            <img src="img/icon-arrow-white.svg" alt="" class="h-3 w-3 !text-white stroke-2" />
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="bg-margin w-full h-[96px] lg:h-[164px]"></div> <!-- margin -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="w-full bg-gray-50 border-t border-gray-200 pt-16 lg:pt-24 px-6 xl:px-16 pb-16">
+        <div class="grid grid-cols-12 gap-x-6 gap-y-12">
+            <div class="col-span-12 lg:col-span-3 flex flex-col gap-y-6">
+                <div class="flex items-center gap-x-6">
+                    <img src="img/logo.png" alt="" class="w-auto h-12 lg:h-16" />
+                    <p class="text-lg font-semibold text-gray-800"> Pegaso Informatica</p>
+                </div>
+                <p class="text-gray-600 leading-[180%]"> Da 20 anni ci occupiamo di vendita e assistenza computer, reti aziendali e software, e assistiamo le aziende in ambito informatico e digitale. </p>
+            </div>
+            <div class="hidden lg:block col-span-2"></div>
+            <div class="col-span-12 lg:col-span-6 flex flex-col lg:flex-row gap-y-12 justify-between">
+                <div class="flex flex-col">
+                    <p class="text-lg text-gray-800"> Link </p>
+                    <a href="" class="mt-6 text-gray-600"> Servizi </a>
+                    <a href="" class="mt-3 text-gray-600"> Chi siamo </a>
+                    <a href="" class="mt-3 text-gray-600"> Dicono di noi </a>
+                </div>
+                <div class="flex flex-col">
+                    <p class="text-lg text-gray-800"> Legale </p>
+                    <a href="" class="mt-6 text-gray-600"> Termini e condizioni </a>
+                    <a href="" class="mt-3 text-gray-600"> Privacy policy </a>
+                    <a href="" class="mt-3 text-gray-600"> Cookie </a>
+                </div>
+                <div class="flex flex-col gap-y-6">
+                    <p class="text-lg text-gray-800"> Contatti </p>
+                    <div class="flex flex-col gap-y-1">
+                        <p class="text-gray-600"> Hardware </p>
+                        <a href="tel:0495941819" class="text-gray-800"> 049 594 1819 </a>
+                    </div>
+                    <div class="flex flex-col gap-y-1">
+                        <p class="text-gray-600"> Software </p>
+                        <a href="tel:0495949276" class="text-gray-800"> 049 594 9276 </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-16 col-span-12 h-[1px] bg-gray-300"></div>
+        <div class="col-span-12 mt-16">
+            <p class="text-sm lg:text-base text-gray-500"> © Copyright 2022, All Rights Reserved by Pegaso Informatica </p>
+        </div>
+    </div>
+
+    <!-- Modal supporto -->
+    <div id="modal-supporto__container" class="z-50 fixed inset-0 h-screen w-full hidden">
+        <div
+            id="modal-supporto__background" 
+            onClick="toggleModalSupport()" 
+            class="absolute inset-0 bg-gray-800/50 backdrop-blur-sm opacity-0 transition duration-500"
+        ></div>
+        <div
+            id="modal-supporto__modal-body" 
+            class="absolute right-0 top-0 bottom-0 overflow-auto flex flex-col gap-y-6 lg:gap-y-8 p-6 lg:p-10 bg-white shadow-sm w-[94vw] max-w-[500px] translate-x-[100vw] transition duration-500"
+        >
+            <div class="flex items-start justify-between">
+                <h4 class="text-[22px] lg:text-[28px] text-gray-800 font-semibold tracking-tight"> Supporto tecnico </h4>
+                <button onclick="toggleModalSupport()" class="bgwhite w-10 h-10 border hover:bg-gray-200 transition rounded-full text-gray-900 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>                       
+                </button>
+            </div>
+            
+            <ul class="text-sm lg:text-base text-gray-600 leading-[180%] flex flex-col lg:gap-y-2">
+                <li>
+                    •&nbsp; Prima di cliccare sul pulsante mettersi in contatto con l'assistenza tecnica di Pegaso Informatica. 
+                </li>
+                <li>
+                    •&nbsp; Alla richiesta di download salvare il file nel desktop o cliccare su esegui.
+                </li>
+                <li>
+                    •&nbsp; Quando si aprirà Team Viewer, comunicare l' ID.
+                </li>
+                <li>
+                    •&nbsp; La procedura potrebbe non funzionare in presenza di un server proxy.
+                </li>
+                <li>
+                    •&nbsp; Se nel computer è già installata una versione di Team Viewer diversa da questa (7), è necessario prima chiuderla, cliccando con il tasto destro sull'iconetta vicino all'orologio, quindi dal menu a tendina Esci.
+                </li>
+            </ul>
+
+            <div class="flex flex-col gap-y-4 lg:gap-y-6">
+                <a href="download/TeamViewerQS.exe" download class="h-[52px] lg:h-[64px] flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition rounded-lg">
+                    <img src="img/logo-teamviewer.png" alt="" class="h-[17px] lg:h-[21px] w-auto">
+                </a>
+                <a href="download/Supremo.exe" class="h-[52px] lg:h-[64px] flex items-center justify-center bg-blue-50 hover:bg-blue-100 transition rounded-lg">
+                    <img src="img/logo-supremo.png" download alt="" class="h-[28px] lg:h-[32px] w-auto">
+                </a>
+                <a href="download/AnyDesk.exe" class="h-[52px] lg:h-[64px] flex items-center justify-center bg-red-100 hover:bg-red-200 transition rounded-lg">
+                    <img src="img/logo-anydesk.png" download alt="" class="h-[24px] lg:h-[28px] w-auto">
+                </a>
+            </div>
+        </div>
+    </div> 
+
+    <!-- Modal form success -->
+    <div id="modal-form-success__container" class="z-50 fixed inset-0 overflow-y-scroll hidden">
+        <div
+            id="modal-form-success__background" 
+            onClick="toggleModalFormSuccess()" 
+            class="fixed inset-0 bg-gray-800/50 backdrop-blur-sm opacity-0 shadow-sm transition duration-500"
+        ></div>
+        <div id="modal-form-success__body"  class="w-[calc(100%-48px)] h-auto max-w-[500px] bg-white rounded-[28px] absolute top-6 lg:top-16 left-1/2 transform translate-x-[-50%] scale-95 opacity-0 transition duration-500 p-8">
+            <div class="flex items-center justify-between">
+                <p class="text-[22px] lg:text-[28px] text-gray-900"> Messaggio inviato!</p>
+                <button onClick="toggleModalFormSuccess()" class="bgwhite w-10 h-10 border hover:bg-gray-200 transition rounded-full text-gray-900 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>                       
+                </button>
+            </div>
+            <p class="text-sm lg:text-base text-gray-800 leading-[150%] mt-6 pr-2"> Ti ringraziamo per averci contattato, cercheremo di risponderti il prima possibile non appena avremo valutato il tuo messaggio. </p>
+            <p class="text-sm text-gray-600 mt-12">Questo è il resoconto del tuo messaggio</p>
+            <div class="w-full bg-gray-50 border rounded-[12px] mt-3 p-4 flex flex-col gap-y-3 text-sm text-gray-800">
+                <p> Interesse: <span id="form-success-interest"></span> </p>
+                <p> Nome: <span id="form-success-name"></span> </p>
+                <p> Email: <span id="form-success-email"></span> </p>
+                <p> Messaggio: <span id="form-success-message"></span> </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid columns decoration -->
+    <div class="z-[-1] fixed inset-0">
+        <div class="mx-auto w-full max-w-[1348px] grid grid-cols-12 gap-x-6 px-6">
+            <div class="col-span-4">
+                <div class="w-[1px] h-screen" style="border: 1px solid #f9fafb"></div>
+            </div>
+            <div class="col-span-4">
+                <div class="w-[1px] h-screen" style="border: 1px solid #f9fafb"></div>
+            </div>
+            <div class="col-span-4 flex justify-between">
+                <div class="w-[1px] h-screen" style="border: 1px solid #f9fafb"></div>
+                <div class="w-[1px] h-screen" style="border: 1px solid #f9fafb"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gsap cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+
+    <!-- Axios cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js" integrity="sha512-L4lHq2JI/GoKsERT8KYa72iCwfSrKYWEyaBxzJeeITM9Lub5vlTj8tufqYk056exhjo2QDEipJrg6zen/DDtoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        var serviceSelected = 0
+        var formSubmitted = false
+
+        const toggleServiceSelected = (n, formNumber) => {
+            serviceSelected = n
+            
+            const el = document.getElementById('form-' + formNumber + '-button-' + n)
+            el.classList.add('form-button-active')
+
+            if(formNumber == 1){
+                document.getElementById('form-' + 2 + '-button-' + n).classList.add('form-button-active')
+                document.getElementById('form-' + 3 + '-button-' + n).classList.add('form-button-active')
+            }
+            if(formNumber == 2){
+                document.getElementById('form-' + 1 + '-button-' + n).classList.add('form-button-active')
+                document.getElementById('form-' + 3 + '-button-' + n).classList.add('form-button-active')
+            }
+            if(formNumber == 3){
+                document.getElementById('form-' + 1 + '-button-' + n).classList.add('form-button-active')
+                document.getElementById('form-' + 2 + '-button-' + n).classList.add('form-button-active')
+            }
+
+            if(n == 1){
+                document.getElementById('form-' + 1 + '-button-2').classList.remove('form-button-active')
+                document.getElementById('form-' + 1 + '-button-3').classList.remove('form-button-active')
+
+                document.getElementById('form-' + 2 + '-button-2').classList.remove('form-button-active')
+                document.getElementById('form-' + 2 + '-button-3').classList.remove('form-button-active')
+
+                document.getElementById('form-' + 3 + '-button-2').classList.remove('form-button-active')
+                document.getElementById('form-' + 3 + '-button-3').classList.remove('form-button-active')
+            }
+            if(n == 2){
+                document.getElementById('form-' + 1 + '-button-1').classList.remove('form-button-active')
+                document.getElementById('form-' + 1 + '-button-3').classList.remove('form-button-active')
+
+                document.getElementById('form-' + 2 + '-button-1').classList.remove('form-button-active')
+                document.getElementById('form-' + 2 + '-button-3').classList.remove('form-button-active')
+
+                document.getElementById('form-' + 3 + '-button-1').classList.remove('form-button-active')
+                document.getElementById('form-' + 3 + '-button-3').classList.remove('form-button-active')
+            }
+            if(n == 3){
+                document.getElementById('form-' + 1 + '-button-1').classList.remove('form-button-active')
+                document.getElementById('form-' + 1 + '-button-2').classList.remove('form-button-active')
+
+                document.getElementById('form-' + 2 + '-button-1').classList.remove('form-button-active')
+                document.getElementById('form-' + 2 + '-button-2').classList.remove('form-button-active')
+
+                document.getElementById('form-' + 3 + '-button-1').classList.remove('form-button-active')
+                document.getElementById('form-' + 3 + '-button-2').classList.remove('form-button-active')
+            }
+
+            // Cleaning error borders
+            document.getElementById('form-' + formNumber + '-button-1').classList.remove('!border-red-500')
+            document.getElementById('form-' + formNumber + '-button-2').classList.remove('!border-red-500')
+            document.getElementById('form-' + formNumber + '-button-3').classList.remove('!border-red-500')
+        }
+
+        const removeErrorInput = (name) => {
+            document.getElementsByName(name)[0].classList.remove('!border-red-500')
+        }
+
+        const checkForm = (n) => {
+            let ok = true
+
+            if(serviceSelected == 0) {
+                ok = false
+                document.getElementById('form-' + n + '-button-1').classList.add('!border-red-500')
+                document.getElementById('form-' + n + '-button-2').classList.add('!border-red-500')
+                document.getElementById('form-' + n + '-button-3').classList.add('!border-red-500')
+            }
+            if(document.getElementsByName(`name${n}`)[0].value == '') {
+                ok = false
+                document.getElementsByName(`name${n}`)[0].classList.add('!border-red-500')
+            }
+            if(document.getElementsByName(`email${n}`)[0].value == '') {
+                ok = false
+                document.getElementsByName(`email${n}`)[0].classList.add('!border-red-500')
+            }
+            if(document.getElementsByName(`message${n}`)[0].value == '') {
+                ok = false
+                document.getElementsByName(`message${n}`)[0].classList.add('!border-red-500')
+            }
+
+            return ok
+        }
+
+        const showLoadingForm = (n) => {
+            formSubmitted = true
+            document.getElementById('form-' + n + '-submit-loading').classList.remove('hidden')
+            document.getElementById('form-' + n + '-submit-not-loading').classList.add('hidden')
+        }
+        
+        const hideLoadingForm = (n) => {
+            document.getElementById('form-' + n + '-submit-loading').classList.add('hidden')
+            document.getElementById('form-' + n + '-submit-not-loading').classList.remove('hidden')
+        }
+
+        const clearForm = () => {
+            serviceSelected = 0
+
+            document.getElementById('form-' + 1 + '-button-1').classList.remove('form-button-active')
+            document.getElementById('form-' + 1 + '-button-2').classList.remove('form-button-active')
+            document.getElementById('form-' + 1 + '-button-3').classList.remove('form-button-active')
+
+            document.getElementById('form-' + 2 + '-button-1').classList.remove('form-button-active')
+            document.getElementById('form-' + 2 + '-button-2').classList.remove('form-button-active')
+            document.getElementById('form-' + 2 + '-button-3').classList.remove('form-button-active')
+
+            document.getElementById('form-' + 3 + '-button-1').classList.remove('form-button-active')
+            document.getElementById('form-' + 3 + '-button-2').classList.remove('form-button-active')
+            document.getElementById('form-' + 3 + '-button-3').classList.remove('form-button-active')
+
+            document.getElementsByName(`name1`)[0].value = ''
+            document.getElementsByName(`email1`)[0].value = ''
+            document.getElementsByName(`message1`)[0].value = ''
+
+            document.getElementsByName(`name2`)[0].value = ''
+            document.getElementsByName(`email2`)[0].value = ''
+            document.getElementsByName(`message2`)[0].value = ''
+
+            document.getElementsByName(`name3`)[0].value = ''
+            document.getElementsByName(`email3`)[0].value = ''
+            document.getElementsByName(`message3`)[0].value = ''
+        }
+
+        const setSuccessText = (n) => {
+            document.getElementById('form-success-interest').innerText = serviceSelected == 1 ? 'Hardware' : serviceSelected == 2 ? 'Reti e sicurezza' : serviceSelected == 3 ? 'Software' : 'Non specificato'
+            document.getElementById('form-success-name').innerText = document.getElementsByName(`name${n}`)[0].value
+            document.getElementById('form-success-email').innerText = document.getElementsByName(`email${n}`)[0].value
+            document.getElementById('form-success-message').innerText = document.getElementsByName(`message${n}`)[0].value
+        }
+
+        const submitForm = (e, n) => {
+            e.preventDefault()
+
+            if(formSubmitted) return
+
+            if(!checkForm(n)) return
+
+            showLoadingForm(n)
+
+            const name = document.getElementsByName(`name${n}`)[0].value
+            const email = document.getElementsByName(`email${n}`)[0].value
+            const message = document.getElementsByName(`message${n}`)[0].value
+
+            const url = 
+                `https://pegaso-digital-studio.vercel.app/api/contact?source=pegaso-informatica&interest=${serviceSelected}&email=${email}&name=${name}&message=${message}`
+
+            axios.post(url)
+                .then((res) => {
+                    setTimeout(() => {
+                        setSuccessText(n)
+                        toggleModalFormSuccess()
+                        clearForm()
+                        hideLoadingForm(n)
+                        formSubmitted = false
+                    }, 1500)
+                    // console.log(res)
+                })
+                .catch((err) => {
+                    alert('Sembra ci sia stato un errore. Se il problema persiste contattaci via telefono. Grazie per la  pazienza.')
+                    hideLoadingForm(n)
+                    formSubmitted = false
+                    // console.log(err)
+                })
+
+        }
+
+        const toggleMenuMobile = () => {
+            const el = document.getElementById('menu-mobile__container')
+
+            el.classList.contains('translate-x-[-120vw]') 
+                ? el.classList.remove('translate-x-[-120vw]') 
+                : el.classList.add('translate-x-[-120vw]')
+        }
+
+        const toggleModalSupport = () => {
+            const el = document.getElementById('modal-supporto__container')
+            const elBackground = document.getElementById('modal-supporto__background')
+            const elModalBody = document.getElementById('modal-supporto__modal-body')
+
+            if(el.classList.contains('hidden')){
+                el.classList.remove('hidden')
+                setTimeout(() => {
+                    elBackground.classList.remove('opacity-0')
+                    elModalBody.classList.remove('translate-x-[100vw]')
+                }, 100)
+            }
+            else{
+                elBackground.classList.add('opacity-0')
+                elModalBody.classList.add('translate-x-[100vw]')
+                setTimeout(() => {
+                    el.classList.add('hidden')
+                }, 500)
+            }
+        }
+
+        const toggleModalFormSuccess = () => {
+            const el = document.getElementById('modal-form-success__container')
+            const elBackground = document.getElementById('modal-form-success__background')
+            const elModalBody = document.getElementById('modal-form-success__body')
+
+            if(el.classList.contains('hidden')){
+                el.classList.remove('hidden')
+                setTimeout(() => {
+                    elBackground.classList.remove('opacity-0')
+                    elModalBody.classList.remove('scale-95', 'opacity-0')
+                }, 100)
+            }
+            else{
+                elBackground.classList.add('opacity-0')
+                elModalBody.classList.add('scale-95', 'opacity-0')
+                setTimeout(() => {
+                    el.classList.add('hidden')
+                }, 500)
+            }
+        }
+
+        const goToId = (id) => {
+            gsap.to(window,{
+                duration: 1.7,
+                scrollTo: `#${id}`,
+                ease: "circleOut",
+            })
+        }
+
+        const callSupport = () => {
+            location.href = 'tel:0495941819'
+        }
+
+        const goToReviews = () => {
+            window.open('https://www.google.com/search?q=pegaso+informatica&sxsrf=AJOqlzXEqXA143010NYUMWnDwLeTmvxLNw%3A1673628599564&source=hp&ei=t4vBY5m4H_3Yxc8PyquM2Aw&iflsig=AK50M_UAAAAAY8GZx4kneX6214m9vrqly7KWrWHxygtF&ved=0ahUKEwjZ76OxgMX8AhV9bPEDHcoVA8sQ4dUDCAo&uact=5&oq=pegaso+informatica&gs_lcp=Cgdnd3Mtd2l6EANQAFgAYABoAHAAeACAAQCIAQCSAQCYAQCgAQI&sclient=gws-wiz#lrd=0x4778d48dbc6c8551:0xd213684cece45c8d,1,,,,')
+        }
+    </script>
+
+</body>
+</html>
