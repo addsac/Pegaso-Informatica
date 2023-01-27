@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Siamo un negozio di Informatica a FOntaniva, Padova specializzato in offrire servizi alle aziende e privati quali Vendita e assistenza computer e hardware, gestione server e sicurezza reti, consumabili stampanti, siti web e software gestionali.">
     <meta name="keywords" content="pegaso, pegaso informatica, pegaso fontaniva, pegaso cittadella, negozio informatica, computer fontaniva, computer padova, siti web cittadella, siti web fontaniva">
-    <title> Pegaso Informatica | Hardware, Reti, Server e Software</title>
+    <title> Pegaso Informatica | Il tuo negozio di Informatica di fiducia | Hardware, Reti, Server e Software</title>
     
     <link rel="icon" type="image/x-icon" href="img/favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-apple-touch-icon.png" />
@@ -112,12 +112,12 @@
                         🏴󠁧󠁢󠁥󠁮󠁧󠁿
                         <span class="text-[12px] font-semibold"> En </span>
                     </button> -->
-                    <button onClick="toggleModalSupport()" class="text-sm lg:text-base text-gray-800 hover:opacity-60"> 
+                    <button onclick="toggleModalSupport()" class="text-sm lg:text-base text-gray-800 hover:opacity-60"> 
                         Supporto tecnico
                     </button>
-                    <a href="/login.aspx" class="text-sm lg:text-base text-gray-800"> 
-                        Login
-                    </a>
+                    <button onclick="openAnotherPage('frmLogin.aspx')" class="text-sm lg:text-base text-gray-800 transition hover:opacity-60"> 
+                        Accedi
+                    </button>
                 </div>
             </div>
 
@@ -144,7 +144,7 @@
 
                 <!-- call us cta -->
                 <div class="hidden lg:flex justify-end w-[273px]">
-                    <button onClick="callSupport()" class="flex items-center justify-center gap-x-4 bg-blue-50 hover:bg-blue-100 transition px-6 py-3 rounded-[6px]">
+                    <button onclick="callSupport()" class="flex items-center justify-center gap-x-4 bg-blue-50 hover:bg-blue-100 transition px-6 py-3 rounded-[6px]">
                         <img src="img/icon-call.svg" alt="" class="h-8 w-auto" />
                         <div class="flex flex-col text-left gap-y-1">
                             <p class="witespace-nowrap font-semibold text-sm text-gray-900 opacity-50"> Contatta il supporto </p>
@@ -173,16 +173,16 @@
 
             <div class="flex flex-col gap-y-8">
                 <div>
-                    <a href="" class="text-3xl font-semibold text-white"> Servizi </a>
+                    <button onclick="goToId('wrapper-servizi')" class="text-3xl font-semibold text-white"> Servizi </a>
                 </div>
                 <div>
-                    <a href="" class="text-3xl font-semibold text-white"> Chi siamo </a>
+                    <button onclick="goToId('wrapper-storia')" class="text-3xl font-semibold text-white"> Chi siamo </a>
                 </div>
                 <div>
-                    <a href="" class="text-3xl font-semibold text-white"> Dicono di noi </a>
+                    <button onclick="goToId('wrapper-testimonianze')" class="text-3xl font-semibold text-white"> Dicono di noi </a>
                 </div>
                 <div>
-                    <a href="" class="text-3xl font-semibold text-white"> Login </a>
+                    <button onclick="openAnotherPage('frmLogin.aspx')" class="text-3xl font-semibold text-white"> Accedi </button>
                 </div>
             </div>
 
@@ -191,15 +191,15 @@
             <div class="flex flex-col gap-y-6">
                 <div class="flex flex-col gap-y-2">
                     <p class="text-gray-400"> Hardware </p>
-                    <a href="" class="text-xl text-gray-50"> +39 3478756140 </a>
+                    <a href="tel:0495941819" class="text-xl text-gray-50"> 049 5941819 </a>
                 </div>
                 <div class="flex flex-col gap-y-2">
                     <p class="text-gray-400"> Reti e sicurezza </p>
-                    <a href="" class="text-xl text-gray-50"> +39 3478756140 </a>
+                    <a href="tel:0495941819" class="text-xl text-gray-50"> 049 5941819 </a>
                 </div>
                 <div class="flex flex-col gap-y-2">
                     <p class="text-gray-400"> Software </p>
-                    <a href="" class="text-xl text-gray-50"> +39 3478756140 </a>
+                    <a href="tel:0495949276" class="text-xl text-gray-50"> 049 5949276 </a>
                 </div>
             </div>
 
@@ -207,10 +207,10 @@
 
             <div class="flex flex-col gap-y-2">
                 <div>
-                    <button onClick="toggleModalSupport()" class="text-gray-50"> Supporto tecnico </button>
+                    <button onclick="toggleModalSupport()" class="text-gray-50"> Supporto tecnico </button>
                 </div>
                 <div>
-                    <a href="/login.aspx" class="text-gray-50"> Login </a>
+                    <button onclick="openAnotherPage('frmLogin.aspx')" class="text-gray-50"> Login </button>
                 </div>
             </div>
 
@@ -221,25 +221,25 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-400">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                     </svg> 
-                    <a href="" class="text-gray-50"> info@pegaso-informatica.it </a>
+                    <a href="mailto:info@pegasoinformatica.com" class="text-gray-50"> info@pegasoinformatica.com </a>
                 </div>
                 <div class="flex items-center gap-x-3">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-400">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
-                    <a href="" class="text-gray-50"> via Dante 56, Fontaniva (PD) </a>
+                    <a href="https://goo.gl/maps/BvfwTzVvU9tQ8hXY8" target="_blank" class="text-gray-50"> via Dante 56, Fontaniva (PD) </a>
                 </div>
             </div>
 
-            <div class="w-full h-[1px] border border-gray-600"></div>
+            <!-- <div class="w-full h-[1px] border border-gray-600"></div> -->
 
-            <div>
+            <!-- <div>
                 <button class="flex items-center justify-center bg-gray-100 hover:bg-gray-200 transition h-8 px-2 gap-x-[10px] rounded">
                     🏴󠁧󠁢󠁥󠁮󠁧󠁿
                     <span class="text-[12px] font-semibold"> En </span>
                 </button>
-            </div>
+            </div> -->
 
             <div class="w-full h-[1px]"></div>
             <div class="w-full h-[1px]"></div>
@@ -1200,15 +1200,15 @@
             <div class="col-span-12 lg:col-span-6 flex flex-col lg:flex-row gap-y-12 justify-between">
                 <div class="flex flex-col">
                     <p class="text-lg text-gray-800"> Link </p>
-                    <a href="" class="mt-6 text-gray-600"> Servizi </a>
-                    <a href="" class="mt-3 text-gray-600"> Chi siamo </a>
-                    <a href="" class="mt-3 text-gray-600"> Dicono di noi </a>
+                    <button onclick="goToId('wrapper-servizi')" class="mt-6 text-left text-gray-600 transition hover:opacity-60"> Servizi </button>
+                    <button onclick="goToId('wrapper-storia')" class="mt-3 text-left text-gray-600 transition hover:opacity-60"> Chi siamo </button>
+                    <button onclick="goToId('wrapper-testimonianze')" class="mt-3 text-left text-gray-600 transition hover:opacity-60"> Dicono di noi </button>
                 </div>
                 <div class="flex flex-col">
                     <p class="text-lg text-gray-800"> Legale </p>
-                    <a href="" class="mt-6 text-gray-600"> Termini e condizioni </a>
-                    <a href="" class="mt-3 text-gray-600"> Privacy policy </a>
-                    <a href="" class="mt-3 text-gray-600"> Cookie </a>
+                    <!-- <a href="" class="mt-6 text-gray-600"> Termini e condizioni </a> -->
+                    <a href="/privacy.pdf" target="_blank" class="mt-3 text-gray-600"> Privacy policy </a>
+                    <!-- <a href="" class="mt-3 text-gray-600"> Cookie </a> -->
                 </div>
                 <div class="flex flex-col gap-y-6">
                     <p class="text-lg text-gray-800"> Contatti </p>
@@ -1225,7 +1225,7 @@
         </div>
         <div class="mt-16 col-span-12 h-[1px] bg-gray-300"></div>
         <div class="col-span-12 mt-16">
-            <p class="text-sm lg:text-base text-gray-500"> © Copyright 2022, All Rights Reserved by Pegaso Informatica </p>
+            <p class="text-sm lg:text-base text-gray-500"> © Copyright 2022, Tutti i diritti riservati di Pegaso Informatica </p>
         </div>
     </div>
 
@@ -1553,11 +1553,25 @@
         }
 
         const goToId = (id) => {
+            let el = document.getElementById('menu-mobile__container')
+
+            el.classList.contains('translate-x-[-120vw]') 
+                ? null
+                : toggleMenuMobile()
+
             gsap.to(window,{
                 duration: 1.7,
                 scrollTo: `#${id}`,
                 ease: "circleOut",
             })
+        }
+
+        const openAnotherPage = (url) => {
+            window.open(
+                'http://pegasoinformatica.com/' + url,
+                "_blank",
+                "scrollbars=no, resizable=yes, width=700, height=700, status=no, location=no, toolbar=no"
+            )
         }
 
         const callSupport = () => {
