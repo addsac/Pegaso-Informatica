@@ -118,7 +118,7 @@
                             🏴󠁧󠁢󠁥󠁮󠁧󠁿
                             <span class="text-[12px] font-semibold"> En </span>
                         </button> -->
-                    <button onclick="toggleModalSupport()" class="text-sm lg:text-base text-gray-800 hover:opacity-60">
+                    <button onclick="toggleModalSupport(); return false" class="text-sm lg:text-base text-gray-800 hover:opacity-60">
                         Supporto tecnico
                     </button>
                     <a href="frmLogin.aspx" class="text-sm lg:text-base text-gray-800">
@@ -222,7 +222,7 @@
 
             <div class="flex flex-col gap-y-2">
                 <div>
-                    <button onclick="toggleModalSupport()" class="text-gray-50"> Supporto tecnico </button>
+                    <button onclick="toggleModalSupport(); return false" class="text-gray-50"> Supporto tecnico </button>
                 </div>
                 <div>
                     <button onclick="openAnotherPage('frmLogin.aspx')" class="text-gray-50"> Login </button>
@@ -282,7 +282,7 @@
                         </div>
                     </div>
                     
-                    <button  class="rounded-lg bg-primary-normal hover:opacity-80 transition h-[64px] py-4 px-2 text-white font-semibold flex items-center justify-center">
+                    <button class="rounded-lg bg-primary-normal hover:opacity-80 transition h-[64px] py-4 px-2 text-white font-semibold flex items-center justify-center">
                         <div class="flex gap-x-3 items-center justify-center">
                             Accedi
                             <img src="img/icon-arrow-white.svg" alt="" class="h-3 w-3 !text-white stroke-2" />
@@ -344,14 +344,14 @@
 
     <!-- Modal supporto -->
     <div id="modal-supporto__container" class="z-50 fixed inset-0 h-screen w-full hidden">
-        <div id="modal-supporto__background" onClick="toggleModalSupport()"
+        <div id="modal-supporto__background" onClick="toggleModalSupport(); return false"
             class="absolute inset-0 bg-gray-800/50 backdrop-blur-sm opacity-0 transition duration-500"></div>
         <div id="modal-supporto__modal-body"
             class="absolute right-0 top-0 bottom-0 overflow-auto flex flex-col gap-y-6 lg:gap-y-8 p-6 lg:p-10 bg-white shadow-sm w-[94vw] max-w-[500px] translate-x-[100vw] transition duration-500">
             <div class="flex items-start justify-between">
                 <h4 class="text-[22px] lg:text-[28px] text-gray-800 font-semibold tracking-tight"> Supporto tecnico
                 </h4>
-                <button onclick="toggleModalSupport()"
+                <button onclick="toggleModalSupport(); return false"
                     class="bgwhite w-10 h-10 border hover:bg-gray-200 transition rounded-full text-gray-900 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                         stroke="currentColor" class="w-4 h-4">
@@ -621,6 +621,8 @@
                     el.classList.add('hidden')
                 }, 500)
             }
+
+            return false
         }
 
         const toggleModalFormSuccess = () => {
